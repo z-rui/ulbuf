@@ -46,10 +46,7 @@ void ulbuf2(void)
 
 	p = buf = bufnew(100);
 	for (int i = 0; i < N; i++) {
-		if (p = bufext(&buf, p, 5)) {
-			memcpy(p, token, 5);
-			p += 5;
-		}
+		p = bufadd(&buf, p, token, 5);
 	}
 	bufdel(buf);
 }
