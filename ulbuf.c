@@ -48,7 +48,7 @@ char *bufext(char **base, char *tail, size_t n)
 	return tail = *base + len;
 }
 
-char *bufadd(char **base, char *tail, const char *s, size_t n)
+char *bufncat(char **base, char *tail, const char *s, size_t n)
 {
 	if ((tail = bufext(base, tail, n))) {
 		memcpy(tail, s, n);
@@ -59,7 +59,7 @@ char *bufadd(char **base, char *tail, const char *s, size_t n)
 
 char *bufcat(char **base, char *tail, const char *s)
 {
-	return (tail) ? bufadd(base, tail, s, strlen(s)) : 0;
+	return (tail) ? bufncat(base, tail, s, strlen(s)) : 0;
 }
 
 void bufdel(char *buf)
