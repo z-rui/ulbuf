@@ -46,7 +46,7 @@ void ulbuf2(void)
 
 	p = buf = bufnew(100);
 	for (int i = 0; i < N; i++) {
-		p = bufadd(&buf, p, token, 5);
+		p = bufncat(&buf, p, token, 5);
 	}
 	bufdel(buf);
 }
